@@ -17,19 +17,61 @@ EnglishFlow 是一个可复用的 AI agent skill，包含练习流程、学习�
 
 ## 快速开始
 
-1. 克隆仓库：
+### 1. 把这段安装指令发给你的 Agent
 
-   ```bash
-   git clone https://github.com/Caspainnn/englishflow.git
-   ```
+在支持 Skill、联网下载和本地文件操作的 Agent 中，复制发送：
 
-2. 将整个 `skills/english-practice` 文件夹放入支持该 skill 格式的 agent 的技能目录。也可以直接让 agent 读取 [SKILL.md](skills/english-practice/SKILL.md)，按其流程执行。
-3. 创建一个自己的学习文件夹，将 [模板](skills/english-practice/assets/templates)中的 `SETTINGS.md` 和 `LEARNING.md` 复制进去，调整目标、语言和复习设置。学习数据放在自己的文件夹。
-4. 告诉 agent 学习文件夹的路径：
+```text
+请帮我安装 EnglishFlow 英语练习 Skill。
 
-   > 使用 $english-practice，学习目录是我的 EnglishLearning 文件夹。先读取 SETTINGS.md 和 LEARNING.md，开始今天的英语练习。
+仓库：https://github.com/Caspainnn/englishflow
+Skill 路径：skills/english-practice
 
-首次使用尚无词表，可以先日常对话，也可以上传词表照片。语音练习需要运行环境支持语音；照片整理需要图片理解；保存记录需要文件访问。只有文本时可进行文字练习，发音不评分。
+请下载并检查这个目录的完整内容，按当前 Agent 支持的安装方式，
+安装为 english-practice。保留 SKILL.md、agents、references、
+scripts 和 assets，不要只下载 SKILL.md。
+
+如果已有同名 Skill，请先说明差异，不要直接覆盖。
+安装后检查文件和相对引用是否完整，告诉我安装位置及如何启用；
+如果需要重启或新开对话，请明确提醒。
+如果当前环境不支持安装 Skill，请说明限制，并提供读取本地
+SKILL.md 及其引用文件的使用方式。
+```
+
+这里是一段给 Agent 执行的自然语言指令，不是所有产品通用的安装命令。具体安装位置和启用方式由你的 Agent 环境决定。
+
+### 2. 让 Agent 初始化你的学习目录
+
+安装并启用后，把下面这段发给 Agent，将路径替换成自己的学习目录：
+
+```text
+请使用 english-practice，初始化我的学习目录：<学习目录的绝对路径>。
+
+先读取 Skill，将其 assets/templates 中的 SETTINGS.md 和
+LEARNING.md 复制到学习目录；已有文件请保留，不要覆盖。
+帮我确认学习目标、练习语言和是否开启错词记录，然后保存设置。
+词表、照片、练习记录和音频都放在这个学习目录，和 Skill 安装目录分开。
+不要创建虚构的词表、评分或练习日志。
+```
+
+### 3. 开始练习
+
+```text
+请使用 english-practice，学习目录是：<学习目录的绝对路径>。
+先读取 SETTINGS.md 和 LEARNING.md，再开始今天的英语练习。
+```
+
+支持 `$skill-name` 调用的环境，也可以使用 `$english-practice`。首次使用尚无词表，可以先日常对话，也可以上传词表照片。语音练习需要环境支持语音；照片整理需要图片理解；保存记录需要文件访问。只有文本时可进行文字练习，发音不评分。
+
+### 手动安装（可选）
+
+如果希望自己管理文件，可以克隆仓库：
+
+```bash
+git clone https://github.com/Caspainnn/englishflow.git
+```
+
+将整个 `skills/english-practice` 文件夹放入当前 Agent 支持的技能目录。也可以直接让 Agent 读取本地 [SKILL.md](skills/english-practice/SKILL.md) 及其引用文件，按流程执行；这种方式不保证自动发现 Skill。学习目录使用 [模板](skills/english-practice/assets/templates) 初始化，已有学习文件保持不变。
 
 ## 我的实际使用工作流
 
