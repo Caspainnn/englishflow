@@ -1,0 +1,4 @@
+﻿interface:
+  display_name: "EnglishFlow"
+  short_description: "Dictation audio, vocabulary activation and resumable speaking practice"
+  default_prompt: "Use $english-practice to read my learning workspace and start English practice."
