@@ -2,6 +2,7 @@
 - Goal: everyday English and vocabulary activation; IELTS optional.
 - Level: not yet assessed.
 - Practice language: English; use the learner's chosen language for setup.
+- Record language: Chinese; configurable independently of Practice language. Keep English learner quotations, target words, usage patterns and corrections as evidence.
 - Translation source language: Chinese by default; adapt to the learner.
 - Session duration: 20–30 minutes, adjustable.
 - Timezone: Asia/Shanghai (Windows TimeZoneId: China Standard Time).
